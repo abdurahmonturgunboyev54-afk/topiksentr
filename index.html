@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Topik Center — koreys tili o’quv markazi</title>
+  <meta name="description" content="Topik Center: koreys tili va TOPIK imtihoniga tayyorlov markazi.">
+  <!-- Shriftlar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Animatsiya kutubxonalari (CSS) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. NAVBAR -->
+  <header class="nav" id="nav">
+    <a class="logo" href="#kirish" aria-label="Topik Center bosh sahifa"><img src="images/logo.webp" alt="Topik Center logotipi" width="420" height="392"></a>
+    <button class="burger" id="burger" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a href="#kirish">Bosh sahifa</a></li>
+        <li><a href="#oqituvchilar">O’qituvchilar</a></li>
+        <li><a href="#aloqa">Aloqa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 2. KIRISH (HERO) -->
+    <section class="hero" id="kirish">
+      <div class="petals" id="petals" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <h1>
+          <span class="line">Koreys tilini va TOPIK</span>
+          <span class="line">imtihonini ishonch bilan o’rganing</span>
+        </h1>
+        <p class="typed-wrap"><span id="typed">안녕하세요!</span></p>
+        <p class="lead">Koreyada o’quvchi tayyorlagan tajribali o’qituvchilar bilan darslar.</p>
+        <a class="btn animate__animated animate__fadeInUp animate__delay-1s" href="#royxat">Ro’yxatdan o’tish</a>
+      </div>
+    </section>
+
+    <!-- 3. O'QITUVCHILAR -->
+    <section class="section" id="oqituvchilar">
+      <h2 data-aos="fade-up">Bizning o’qituvchilar</h2>
+      <div class="teachers">
+        <article class="card" data-aos="fade-up" data-aos-delay="0">
+          <div class="photo" role="img" aria-label="Temur Ibragimov rasmi uchun joy">TI</div>
+          <h3>Temur Ibragimov</h3>
+          <p class="level">TOPIK 5-daraja</p>
+          <ul>
+            <li>6 yillik tajriba</li>
+            <li>Koreyada 300 ga yaqin o’quvchi tayyorlagan</li>
+          </ul>
+        </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="120">
+          <div class="photo" role="img" aria-label="Mubina rasmi uchun joy">M</div>
+          <h3>Mubina</h3>
+          <p class="level">TOPIK 4-daraja</p>
+          <ul>
+            <li>3 yillik tajriba</li>
+            <li>Koreyada 250 o’quvchi tayyorlagan</li>
+          </ul>
+        </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="240">
+          <div class="photo" role="img" aria-label="Gulzira rasmi uchun joy">G</div>
+          <h3>Gulzira</h3>
+          <p class="level">TOPIK 5-daraja</p>
+          <ul>
+            <li>2 yillik tajriba</li>
+            <li>Koreyada 290 o’quvchi tayyorlagan</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. ALOQA -->
+    <section class="section alt" id="aloqa">
+      <h2 data-aos="fade-up">Biz bilan bog’laning</h2>
+      <div class="contact" data-aos="fade-up">
+        <div><h3>Manzil</h3><p data-fill="address">TOPIK_CENTER, Andijon, Andijon viloyati</p><a class="map-link" href="https://maps.app.goo.gl/LmaVW2B23Te8xArWA" target="_blank" rel="noopener">Xaritada ochish</a></div>
+        <div><h3>Qabul telefoni</h3><p><a id="phoneLink" href="#aloqa" data-fill="phone">[TELEFON]</a></p></div>
+        <div><h3>Faoliyat</h3><p><span data-fill="since">[YIL]</span> yildan beri</p></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Topik Center. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <!-- Ro’yxatdan o’tish paneli -->
+  <div class="reg" id="reg" role="dialog" aria-modal="true" aria-labelledby="regTitle" hidden>
+    <div class="reg-top"><button type="button" id="regBack">← Orqaga</button><button type="button" id="regClose">Yopish ✕</button></div>
+    <div class="reg-progress"><span id="regBar"></span></div>
+    <div class="reg-body" id="regBody"></div>
+  </div>
+
+  <!-- Animatsiya kutubxonalari (JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
